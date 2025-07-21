@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { IProfile } from '../interfaces/profile.interface';
 import { IPageble } from '../interfaces/pageble.interface';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,19 +15,27 @@ export class ProfileService {
 
   baseApiUrl = 'https://icherniakov.ru/yt-course/'
 
+  me!: IProfile
+
   getTestAccounts() {
     return this.http.get<IProfile[]>(`${this.baseApiUrl}account/test_accounts`)
   }
 
-  getSubscribersShortList() {
-    return this.http.get<IPageble<IProfile>>(`${this.baseApiUrl}account/subscribers/`)
-      .pipe(
-        map(res => res.items.slice(0, 3))
-      )
+  getMe() {
+    return this.http.get<IProfile>(`${this.baseApiUrl}account/me`).pipe(
+      tap(res => this.me = res)
+    )
   }
 
-  getMe() {
-    return this.http.get<IProfile>(`${this.baseApiUrl}account/me`)
+  getAccount(account_id: string) {
+    return this.http.get<IProfile>(`${this.baseApiUrl}account/${account_id}`)
+  }
+
+  getSubscribersShortList(subsAmount = 3) {
+    return this.http.get<IPageble<IProfile>>(`${this.baseApiUrl}account/subscribers/`)
+      .pipe(
+        map(res => res.items.slice(0, subsAmount))
+      )
   }
 
 }
