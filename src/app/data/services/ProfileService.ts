@@ -38,4 +38,8 @@ export class ProfileService {
       )
   }
 
+  patchProfile(profile: Partial<IProfile>) {
+    return this.http.patch<IProfile>(`${this.baseApiUrl}account/me`, profile)
+  }
+
 }
