@@ -4,9 +4,9 @@ import { ProfileService } from '../../data/services/ProfileService';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { of, switchMap } from 'rxjs';
 import { IProfile } from '../../data/interfaces/profile.interface';
-import { AsyncPipe, NgFor } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { SvgIconComponent } from '../../common-ui/svg-icon/svg-icon.component';
-import { SubscriberCardComponent } from "../../common-ui/sidebar/subscriber-card/subscriber-card.component";
+
 import { ImgUrlPipe } from "../../helpers/pipes/img-url-pipe";
 import { PostFeedComponent } from "../post-feed/post-feed.component";
 
@@ -28,7 +28,7 @@ export class ProfilePageComponent {
 
   profile$ = this.route.params.pipe(
     switchMap(({ id }) => {
-      if (id === 'me') return of(this.profileService.me)
+      if (id === 'me' && this.profileService.me) return of(this.profileService.me)
       return this.profileService.getAccount(id)
     })
   )
