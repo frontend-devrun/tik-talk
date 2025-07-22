@@ -19,28 +19,42 @@ export class SettingsPageComponent {
     firstName: ["", Validators.required],
     lastName: ["", Validators.required],
     username: [{ value: "", disabled: true }, Validators.required],
-    city: ["Kazan", Validators.required],
     description: [''],
-    stack: ['123']
+    stack: ['']
   })
 
 
   constructor() {
     effect(() => {
-      //@ts-ignore
-      this.form.patchValue(this.profileService.me)
+      this.profileService.getMe().subscribe(profile => {
+        //@ts-ignore
+        return this.form.patchValue(
+          {
+            ...profile,
+            stack: this.mergeStack(this.profileService.me.stack)
+          });
+      })
     })
   }
 
   onSave() {
-    console.log('save')
     this.form.markAllAsTouched()
     this.form.updateValueAndValidity()
-
-    // if (this.form.invalid) return
-
-
+    if (this.form.invalid) return
     //@ts-ignore
-    firstValueFrom(this.profileService.patchProfile(this.form.value))
+    firstValueFrom(this.profileService.patchProfile({ ...this.form.value, stack: this.splitStack(this.form.value.stack) }))
+  }
+
+
+  splitStack(stack: string | null | string[]): string[] {
+    if (!stack) return []
+    if (Array.isArray(stack)) return stack
+    return stack.split(',')
+  }
+
+  mergeStack(stack: string | null | string[]) {
+    if (!stack) return ''
+    if (Array.isArray(stack)) return stack.join(',')
+    return stack
   }
 }
