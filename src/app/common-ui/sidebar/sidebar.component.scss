@@ -23,6 +23,7 @@
   line-height: 24px;
   text-align: left;
 
+  &.active,
   &:hover,
   &:focus-visible {
     background: var(--dark-hover-color);
@@ -30,6 +31,7 @@
     border-radius: 2px;
   }
 }
+
 .menu-item svg {
   width: 16px;
   height: 16px;
@@ -64,6 +66,11 @@
   grid-template-columns: 32px 1fr 16px;
   align-items: center;
   background: var(--dark-hover-color);
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .profile-card__avatar {

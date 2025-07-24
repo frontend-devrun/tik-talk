@@ -6,7 +6,6 @@
     <svg icon="settings"></svg>
   </a>
 </header>
-}
 
 <main class="profile-page__body">
   <app-post-feed></app-post-feed>
@@ -25,9 +24,8 @@
     </div>
 
     <h3 class="h6 mb16">Навыки</h3>
-
     <ul class="stack-wrapper mb32">
-      @for (skill of ['123','12313']; track skill) {
+      @for (skill of profile.stack; track skill) {
       <li class="skill-tag">{{ skill }}</li>
       }
     </ul>
@@ -39,3 +37,4 @@
     }
   </div>
 </main>
+}

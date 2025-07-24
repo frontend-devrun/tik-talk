@@ -1,0 +1,23 @@
+.profile-search-form {
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 325px));
+  grid-gap: 40px;
+  background: var(--dark-color);
+  border: 1px solid var(--light-color);
+  position: relative;
+}
+.filter-button {
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  //justify-self: end;
+  background: var(--primary-color);
+}
+.filter-button svg {
+  width: 18px;
+  height: 18px;
+  color: var(--light-color);
+}

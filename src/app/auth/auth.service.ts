@@ -10,13 +10,17 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 
-
 export class AuthService {
   router = inject(Router)
+
   http = inject(HttpClient)
+
   cookieService = inject(CookieService)
+
   baseAuthTokenUrl = 'https://icherniakov.ru/yt-course/auth/'
+
   token: string | null = null
+
   refreshToken: string | null = null
 
 
