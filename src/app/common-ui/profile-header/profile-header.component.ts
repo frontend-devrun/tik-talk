@@ -6,8 +6,8 @@ import { ImgUrlPipe } from '../../helpers/pipes/img-url-pipe';
   selector: 'app-profile-header',
   imports: [ImgUrlPipe],
   templateUrl: './profile-header.component.html',
-  styleUrl: './profile-header.component.scss'
+  styleUrl: './profile-header.component.scss',
 })
 export class ProfileHeaderComponent {
-  profile = input<IProfile>()
+  profile = input<IProfile>();
 }
