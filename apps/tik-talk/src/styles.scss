@@ -1,0 +1,233 @@
+@use 'margins';
+
+:root {
+  --dark-color: #000000;
+  --light-color: #ffffff;
+  --primary-color: #ae7aff;
+  --dark-hover-color: #161616;
+  --red-primary-color: #e99898;
+  --light-transparent-color: rgba(255, 255, 255, 0.75);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: JetBrains Mono, sans-serif;
+}
+
+body {
+  height: 100dvh;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  background-image: url(/assets/imgs/bg/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border: none;
+  outline: none;
+  font-family: JetBrains Mono, sans-serif;
+}
+
+textarea {
+  border: none;
+  outline: none;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: JetBrains Mono, sans-serif;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.skill-tag {
+  padding: 4px 8px;
+  font-weight: 700;
+  font-size: 12px;
+  display: inline;
+  border: 1px solid var(--light-color);
+  border-radius: 2px;
+  height: 24px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  color: var(--dark-color);
+  background: var(--primary-color);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+.h1 {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.h4 {
+  font-weight: 800;
+  font-style: ExtraBold;
+  font-size: 24px;
+  line-height: 32px;
+}
+.h6 {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+}
+.subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.medium-text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+.regular {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.tt-control-label {
+  display: block;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+}
+.tt-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 8px;
+  border: 1px solid var(--light-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border-radius: 2px;
+}
+.tt-input::placeholder {
+  font-weight: 400;
+  color: var(--light-color);
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0px;
+}
+
+.tt-form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tt-form-label__text {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--light-transparent-color);
+}
+.tt-form-input {
+  width: 100%;
+  padding: 12px 0;
+  background: var(--dark-color);
+  border-bottom: 1px solid var(--light-color);
+  color: var(--light-color);
+  font-weight: 400;
+  font-size: 14px;
+}
+.tt-form-input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--light-transparent-color);
+}
+.tt-textarea {
+  height: 84px;
+  resize: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0px;
+}
+.tt-form-input__search {
+  position: relative;
+}
+
+.tt-form-input__search svg {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 0;
+  color: var(--light-color);
+}
+.trash-btn {
+  padding: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--light-color);
+  border-radius: 2px;
+}
+.trash-btn svg {
+  width: 16px;
+  height: 16px;
+  color: var(--red-primary-color);
+}
+.logout-btn {
+  padding: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--light-color);
+  border-radius: 2px;
+}
+.logout-btn svg {
+  width: 16px;
+  height: 16px;
+  color: var(--light-color);
+}
+.cancelBtn {
+  padding: 10px 20px;
+  color: var(--light-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+
+  border: 1px solid var(--light-color);
+}
+
+.btns-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}

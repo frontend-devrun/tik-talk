@@ -1,0 +1,98 @@
+:host {
+  display: block;
+  padding: 20px 12px;
+  background: var(--dark-color);
+  position: relative;
+}
+.main-menu-list {
+  display: grid;
+  grid-gap: 8px;
+}
+
+.menu-item {
+  width: 100%;
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: 16px 1fr max-content;
+  grid-gap: 12px;
+  align-items: center;
+  color: var(--light-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+
+  &.active,
+  &:hover,
+  &:focus-visible {
+    background: var(--dark-hover-color);
+    color: var(--primary-color);
+    border-radius: 2px;
+  }
+}
+
+.menu-item tik-talk-svg {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-item:hover tik-talk-svg {
+  color: var(--primary-color);
+}
+.to-subscribers {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.to-subscribers-link {
+  color: var(--primary-color);
+}
+
+.to-subscribers-icon {
+  width: 9px;
+  height: 11px;
+  color: var(--primary-color);
+}
+.sidebar__footer {
+  position: absolute;
+  width: calc(100% - 24px);
+  bottom: 20px;
+  padding: 4px 16px;
+  border-radius: 2px;
+  margin-bottom: auto;
+  display: grid;
+  grid-template-columns: 32px 1fr 16px;
+  align-items: center;
+  background: var(--dark-hover-color);
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.profile-card__avatar {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+  overflow: hidden;
+}
+.username-text {
+  margin-left: 12px;
+  color: var(--primary-color);
+  display: inline-block;
+  font-weight: 700;
+}
+.settings-btn {
+  height: 16px;
+}
+.settings-btn svg {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+}

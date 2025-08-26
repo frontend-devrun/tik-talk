@@ -1,0 +1,44 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@tik-talk/auth": ["libs/tik-talk/auth/src/index.ts"],
+      "@tik-talk/common-ui": ["libs/tik-talk/common-ui/src/index.ts"],
+      "@tik-talk/data-access-api": [
+        "libs/core/data-access/data-access-api/src/index.ts"
+      ],
+      "@tik-talk/layout": ["libs/tik-talk/layout/src/index.ts"],
+      "@tik-talk/login-page-component": ["libs/tik-talk/login/src/index.ts"],
+      "@tik-talk/pipe": ["libs/shared/helpers/src/index.ts"],
+      "@tik-talk/post-component": ["libs/tik-talk/post/src/index.ts"],
+      "@tik-talk/post-feed-component": ["libs/tik-talk/post-feed/src/index.ts"],
+      "@tik-talk/post-input-component": [
+        "libs/tik-talk/post-input/src/index.ts"
+      ],
+      "@tik-talk/profile": [
+        "libs/tik-talk/profile/features/feature-profile/src/index.ts"
+      ],
+      "@tik-talk/profile-header-component": [
+        "libs/tik-talk/core/common-ui/src/index.ts"
+      ],
+      "@tik-talk/search": ["libs/tik-talk/search/feature-search/src/index.ts"],
+      "@tik-talk/settings": [
+        "libs/tik-talk/settings/features/feature-settings/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

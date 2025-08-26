@@ -1,0 +1,21 @@
+{
+  "name": "search-component",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/tik-talk/search/feature-search/src",
+  "prefix": "tik-talk",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/tik-talk/search/feature-search/jest.config.ts",
+        "tsConfig": "libs/tik-talk/search/feature-search/tsconfig.spec.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

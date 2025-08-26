@@ -1,0 +1,36 @@
+<form class="profile-search-form" [formGroup]="searchForm">
+  <label for="" class="tt-form-label">
+    <span class="tt-form-label__text">Имя</span>
+    <input
+      formControlName="firstName"
+      class="tt-form-input"
+      type="text"
+      placeholder="Выберите"
+    />
+  </label>
+  <label for="" class="tt-form-label">
+    <span class="tt-form-label__text">Фамилия</span>
+    <input
+      formControlName="lastName"
+      class="tt-form-input"
+      type="text"
+      placeholder="Выберите"
+    />
+  </label>
+  <label for="" class="tt-form-label">
+    <span class="tt-form-label__text">Город</span>
+    <input
+      formControlName="city"
+      class="tt-form-input"
+      type="text"
+      placeholder="Выберите"
+    />
+  </label>
+  <label for="" class="tt-form-label">
+    <span class="tt-form-label__text">Навыки</span>
+    <input formControlName="stack" class="tt-form-input" type="text" />
+  </label>
+  <button class="filter-button">
+    <tik-talk-svg icon="filter"></tik-talk-svg>
+  </button>
+</form>

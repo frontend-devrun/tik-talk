@@ -1,0 +1,81 @@
+<tik-talk-profile-header> </tik-talk-profile-header>
+
+<form class="profile-form__wrapper" [formGroup]="form">
+  <div class="profile-form">
+    <div class="two-columns">
+      <label class="tt-form-label">
+        <span class="tt-form-label__text">Имя</span>
+        <input
+          class="tt-form-input"
+          formControlName="firstName"
+          type="text"
+          placeholder="Введите данные"
+        />
+      </label>
+      <label class="tt-form-label">
+        <span class="tt-form-label__text">Фамилия</span>
+        <input
+          class="tt-form-input"
+          formControlName="lastName"
+          type="text"
+          placeholder="Введите данные"
+        />
+      </label>
+    </div>
+
+    <label class="tt-form-label">
+      <span class="tt-form-label__text">Telegram username</span>
+      <input
+        class="tt-form-input"
+        formControlName="username"
+        type="text"
+        placeholder="Введите данные"
+      />
+    </label>
+    <label class="tt-form-label">
+      <span class="tt-form-label__text">О себе</span>
+      <textarea
+        class="tt-form-input tt-textarea"
+        name=""
+        id=""
+        rows="4"
+        formControlName="description"
+      >
+        Введите данные
+    </textarea
+      >
+    </label>
+
+    <label class="tt-form-label">
+      <span class="tt-form-label__text">Аватарка</span>
+      <tik-talk-avatar-upload />
+    </label>
+
+    <label class="tt-form-label">
+      <span class="tt-form-label__text">Навыки</span>
+      <div class="tt-form-input__search">
+        <input
+          class="tt-form-input"
+          formControlName="stack"
+          type="text"
+          placeholder="Введите данные"
+        />
+        <tik-talk-svg icon="search"></tik-talk-svg>
+      </div>
+    </label>
+  </div>
+  <div class="btns-wrapper">
+    <div class="btns-wrapper">
+      <button class="trash-btn">
+        <tik-talk-svg icon="trash"></tik-talk-svg>
+      </button>
+      <button class="logout-btn">
+        <tik-talk-svg icon="logout"></tik-talk-svg>
+      </button>
+    </div>
+    <div class="btns-wrapper">
+      <button class="cancelBtn">Отмена</button>
+      <button class="btn" (click)="onSave()">Сохранить</button>
+    </div>
+  </div>
+</form>
