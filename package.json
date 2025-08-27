@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve tik-talk -o",
-    "build": "nx build tik-talk --prod && rm -rf public && cp -r dist/apps/tik-talk public",
-    "tik-talk:build:vercel": "nx build tik-talk --prod",
+    "build": "nx build tik-talk --configuration=production",
+    "vercel-build": "nx build tik-talk --configuration=production",
     "format": "npx prettier --write '**/*.{ts,html,css,scss,json,md,spec.ts}'",
     "lint": "nx run-many -t lint",
     "lint:fix": "nx run-many -t lint --fix"
